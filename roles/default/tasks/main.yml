@@ -11,11 +11,11 @@
     - wget
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
+- name: get bash_it
+  git: repo=https://github.com/Bash-it/bash-it.git dest=~/.bash_it depth=1
+
 - name: get vundle
   git: repo=https://github.com/VundleVim/Vundle.vim.git dest=~/.vim/bundle/Vundle.vim
-
-# - name: get bash-it
-#   git: repo=https://github.com/Bash-it/bash-it.git dest=~/.bash_it
 
 - name: get rbenv
   git: repo=https://github.com/sstephenson/rbenv.git dest=~/.rbenv
