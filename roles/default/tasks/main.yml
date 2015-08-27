@@ -5,10 +5,10 @@
     - vim
     - screen
     - git-core
-    - ack-grep
     - htop
     - curl
     - wget
+    - silversearcher-ag
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
 - name: get bash_it
