@@ -32,6 +32,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
 Plugin 'ervandew/supertab'
+Plugin 'szw/vim-tags'
 
 Plugin '907th/vim-auto-save'
 Plugin 'myusuf3/numbers.vim'
