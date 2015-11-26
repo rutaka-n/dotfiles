@@ -22,6 +22,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
 Plugin 'bling/vim-airline'
 Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'vim-scripts/bufkill.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'vim-scripts/LargeFile'
@@ -33,6 +34,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
 Plugin 'ervandew/supertab'
 Plugin 'szw/vim-tags'
+Plugin 'Raimondi/delimitMate'
 
 Plugin '907th/vim-auto-save'
 Plugin 'myusuf3/numbers.vim'
@@ -47,6 +49,9 @@ Plugin 'fatih/vim-go'
 "erlang
 Plugin 'jimenezrick/vimerl'
 Plugin 'vim-erlang/vim-erlang-tags'
+"coffee
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'vitaly/vim-syntastic-coffee'
 call vundle#end()
 filetype plugin indent on
 
@@ -65,16 +70,15 @@ set list
 set listchars=tab:>.,trail:.
 set backspace=indent,eol,start
 
+set cursorline
 set lazyredraw
 set ttyfast
 
-set cursorcolumn
-set cursorline
 set hidden
 set nofoldenable
 
 if has('mouse')
-  set mouse=a
+  set mouse=
   set mousehide
 endif
 
@@ -98,6 +102,11 @@ set wildcharm=<TAB>
 set wildmode=list:longest,full
 set whichwrap=b,s,<,>,[,],l,h
 
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+highlight lCursor guifg=NONE guibg=Cyan
+
 nmap <cr> :nohlsearch<cr>
 
 " Automatically removing all trailing whitespace
@@ -119,10 +128,15 @@ nmap <C-\> :NERDTreeFind<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']
 
-" rubocop config
+" syntastic
 let g:vimrubocop_config = '~/.rubocop.yml'
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 let g:syntastic_ruby_rubocop_exec = '~/.rbenv/shims/rubocop'
+
+let g:syntastic_enable_signs=1
+let g:syntastic_coffee_checkers = ['coffeelint', 'coffee']
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
 
 " Airline
 set laststatus=2 " Always show the statusline
@@ -142,5 +156,7 @@ let g:numbers_exclude = ['tagbar', 'nerdtree', 'vimshell', 'w3m']
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
+
+let g:vim_tags_auto_generate = 1
 
 let g:buffergator_viewport_split_policy = "B"
