@@ -1,7 +1,7 @@
 You need install:
 
 * git
-* ack
+* silversearch
 * rubocop
 * ruby and co
 * ...
