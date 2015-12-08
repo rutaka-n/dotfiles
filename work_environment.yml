@@ -1,4 +1,0 @@
-- hosts: localhost
-  roles:
-    - default
-  tags: default

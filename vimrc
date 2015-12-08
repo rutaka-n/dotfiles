@@ -1,8 +1,7 @@
-"my .vimrc file
+" my .vimrc file
 
 set nocompatible
 filetype off
-set shell=/bin/bash
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -19,7 +18,6 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-dispatch'
 Plugin 'bling/vim-airline'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'vim-scripts/bufkill.vim'
@@ -30,7 +28,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
 Plugin 'ervandew/supertab'
 Plugin 'szw/vim-tags'
@@ -38,20 +35,25 @@ Plugin 'Raimondi/delimitMate'
 
 Plugin '907th/vim-auto-save'
 Plugin 'myusuf3/numbers.vim'
+Plugin 'easymotion/vim-easymotion'
 
-"ruby
+" ruby
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rbenv'
 Plugin 'ngmy/vim-rubocop'
-"golang
+" golang
 Plugin 'fatih/vim-go'
 "erlang
 Plugin 'jimenezrick/vimerl'
 Plugin 'vim-erlang/vim-erlang-tags'
-"coffee
+" coffee
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'vitaly/vim-syntastic-coffee'
+" haskell
+Plugin 'wlangstroth/vim-haskell'
+Plugin 'Twinside/vim-syntax-haskell-cabal'
+" Plugin 'eagletmt/ghcmod-vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -67,7 +69,6 @@ colorscheme jellybeans
 set novisualbell
 
 set list
-set listchars=tab:>.,trail:.
 set backspace=indent,eol,start
 
 set cursorline
@@ -92,12 +93,10 @@ set nobackup
 set nowb
 set noswapfile
 
-set autoindent
 set smartindent
 set tabstop=4
 set expandtab
 
-set wildmenu
 set wildcharm=<TAB>
 set wildmode=list:longest,full
 set whichwrap=b,s,<,>,[,],l,h
@@ -116,14 +115,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
 imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 
-" Allow to copy/paste between VIM instances
-" "copy the current visual selection to ~/.vbuf
-vmap <Leader>y :w! ~/.vbuf<CR>
-" "copy the current line to the buffer file if no visual selection
-nmap <Leader>y :.w! ~/.vbuf<CR>
-" "paste the contents of the buffer file
-nmap <Leader>p :r ~/.vbuf<CR>
-
 nmap <C-\> :NERDTreeFind<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']
@@ -135,24 +126,22 @@ let g:syntastic_ruby_rubocop_exec = '~/.rbenv/shims/rubocop'
 
 let g:syntastic_enable_signs=1
 let g:syntastic_coffee_checkers = ['coffeelint', 'coffee']
+" let g:syntastic_coffee_coffeelint_args = "--file /usr/local/coffeelint.json"
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 
 " Airline
-set laststatus=2 " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
 set ttimeoutlen=50
 let g:airline_theme = 'serene'
 let g:airline#extensions#hunks#enabled=0
 let g:airline#extensions#branch#enabled=1
 
-nmap <F8> :TagbarToggle<CR>
-
-"numbers
+" numbers
 nnoremap <F2> :NumbersToggle<CR>
 let g:numbers_exclude = ['tagbar', 'nerdtree', 'vimshell', 'w3m']
 
-"autosave
+" autosave
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
@@ -160,3 +149,10 @@ let g:auto_save_silent = 1
 let g:vim_tags_auto_generate = 1
 
 let g:buffergator_viewport_split_policy = "B"
+
+" easymotion
+map <Leader> <Plug>(easymotion-prefix)
+
+" GitGutter
+nmap [h <Plug>GitGutterPrevHunk
+nmap ]h <Plug>GitGutterNextHunk
