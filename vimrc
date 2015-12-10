@@ -156,3 +156,9 @@ map <Leader> <Plug>(easymotion-prefix)
 " GitGutter
 nmap [h <Plug>GitGutterPrevHunk
 nmap ]h <Plug>GitGutterNextHunk
+
+" Ag for grep and ctrlp
+if executable("ag")
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+endif
