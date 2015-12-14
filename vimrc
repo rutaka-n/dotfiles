@@ -83,6 +83,8 @@ if has('mouse')
   set mousehide
 endif
 
+set lcs=tab:▸\ ,trail:·,eol:¬
+
 set nowrap
 set number
 set hlsearch

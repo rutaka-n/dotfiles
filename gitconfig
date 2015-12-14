@@ -1,0 +1,22 @@
+[push]
+  default = current
+
+[color]
+  ui = auto
+
+[core]
+  excludesfile = ~/.gitignore_global
+  autocrlf = input
+
+[apply]
+  whitespace = nowarn
+
+[merge]
+  tool = vimdiff
+
+[mergetool]
+  keepBackup = false
+  prompt = false
+
+[difftool]
+  prompt = false
