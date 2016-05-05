@@ -8,4 +8,5 @@ You need install:
 * nvim
 * vim-plug
 * curl
+* tmux
 * ...
