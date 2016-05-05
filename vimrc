@@ -1,61 +1,90 @@
 " my .vimrc file
 
 set nocompatible
-filetype off
+call plug#begin('~/.vim/plugged')
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"Plug 'Shougo/vimproc.vim'
+" themes
+Plug 'nanotech/jellybeans.vim'
+" statusline
+Plug 'itchyny/lightline.vim'
+" some defaults
+Plug 'tpope/vim-sensible'
+" manipulate surround characters
+Plug 'tpope/vim-surround'
+Plug 'Raimondi/delimitMate'
+" commetary
+Plug 'tpope/vim-commentary'
+" repeat works everywhere
+Plug 'tpope/vim-repeat'
+" autodetect right indent
+Plug 'tpope/vim-sleuth'
 
-Plugin 'gmarik/Vundle.vim'
+Plug 'tpope/vim-unimpaired'
+" buffer managment
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'vim-scripts/bufkill.vim'
+" search
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'rking/ag.vim'
 
-Plugin 'Shougo/vimproc.vim'
-Plugin 'nanotech/jellybeans.vim'
+" auto enable lazyloading for large file
+Plug 'vim-scripts/LargeFile'
+" enables transparent pasting
+Plug 'conradirwin/vim-bracketed-paste'
+" syntax checking
+Plug 'scrooloose/syntastic'
+" file manager
+Plug 'scrooloose/nerdtree'
+" git
+Plug 'tpope/vim-fugitive'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
 
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-sleuth'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
-Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'vim-scripts/bufkill.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'rking/ag.vim'
-Plugin 'vim-scripts/LargeFile'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'godlygeek/tabular'
-Plugin 'ervandew/supertab'
-Plugin 'szw/vim-tags'
-Plugin 'Raimondi/delimitMate'
+" Tabulate
+Plug 'godlygeek/tabular'
+" Compltion on tab
+Plug 'ervandew/supertab'
+"Plug 'szw/vim-tags'
+" autosave
+Plug '907th/vim-auto-save'
+" relative numbers
+Plug 'myusuf3/numbers.vim'
+" easymoution magick
+Plug 'easymotion/vim-easymotion'
 
-Plugin '907th/vim-auto-save'
-Plugin 'myusuf3/numbers.vim'
-Plugin 'easymotion/vim-easymotion'
+" lexical checking
+Plug 'reedes/vim-lexical'
 
 " ruby
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rbenv'
-Plugin 'ngmy/vim-rubocop'
-" golang
-Plugin 'fatih/vim-go'
-"erlang
-Plugin 'jimenezrick/vimerl'
-Plugin 'vim-erlang/vim-erlang-tags'
+Plug 'tpope/vim-endwise', { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'ngmy/vim-rubocop', { 'for': 'ruby' }
 " coffee
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'vitaly/vim-syntastic-coffee'
-" haskell
-Plugin 'wlangstroth/vim-haskell'
-Plugin 'Twinside/vim-syntax-haskell-cabal'
-" Plugin 'eagletmt/ghcmod-vim'
-call vundle#end()
-filetype plugin indent on
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+Plug 'vitaly/vim-syntastic-coffee', { 'for': 'coffee' }
+" golang
+Plug 'fatih/vim-go', { 'for': 'go' }
+" json
+Plug 'elzr/vim-json', { 'for': 'json' }
+" toml
+Plug 'cespare/vim-toml', { 'for': 'toml' }
+" markdown
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+Plug 'kannokanno/previm', { 'for': 'markdown' }
+Plug 'tyru/open-browser.vim', { 'for': 'markdown' }
+" apiblueprint
+Plug 'kylef/apiblueprint.vim', { 'for': 'apiblueprint' }
+" Erlang
+Plug 'edkolev/erlang-motions.vim', { 'for': 'erlang' }
+Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
+Plug 'akalyaev/vim-erlang-spec', { 'for': 'erlang' }
+
+" Haskell
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+Plug 'Shougo/vimproc', { 'for': 'haskell' }
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+call plug#end()
 
 syntax on
 filetype on
@@ -68,76 +97,70 @@ set background=dark
 colorscheme jellybeans
 set novisualbell
 
-set list
 set backspace=indent,eol,start
-
-set cursorline
-set lazyredraw
-set ttyfast
-
-set hidden
-set nofoldenable
 
 if has('mouse')
   set mouse=
   set mousehide
 endif
 
-set lcs=tab:▸\ ,trail:·,eol:¬
-
-set nowrap
-set number
-set hlsearch
-set ignorecase
-set smartcase
-
-set nobackup
-set nowb
-set noswapfile
-
-set smartindent
-set tabstop=4
-set expandtab
-
+set shell=/bin/bash
+set cursorline                        " Highlight current line
+set expandtab                         " Insert spaces instead of actually tabs
+set tabstop=2                         " Number of spaces each tab counts for
+set softtabstop=2                     " Number of spaces for some tab operations
+set shiftwidth=2                      " The space << and >> moves the lines
+set shiftround
+set smartindent                       " Smart auto-indent when creating a new line
+set colorcolumn=80
+set synmaxcol=300                     " The max number of columns to try and highlight
+set ttyfast                           " Optimize for fast terminal connections
+set lazyredraw
+set encoding=utf-8                    " Set the default encodings just in case $LANG isn't set
+set nowrap                            " Don't wrap lines
+set number                            " Enable line numbers
+set relativenumber
+set nowritebackup                     " Don't create a backup when overwriting a file
+set noswapfile                        " Don't write swap files
+set nobackup                          " Don't keep backup files
+set hidden
+set nofoldenable
+set scrolloff=5                       " Lines the cursor is to the edge before scrolling
+set complete-=i                       " set complete=.,w,b,u,t
+set completeopt=menu,preview
+set wildmenu
 set wildcharm=<TAB>
 set wildmode=list:longest,full
 set whichwrap=b,s,<,>,[,],l,h
+set tags+=.git/tags
+set lcs=trail:·,tab:→·,eol:↪,nbsp:×
+set nojoinspaces                      " Don't add 2 spaces when using J
 
-set keymap=russian-jcukenwin
-set iminsert=0
-set imsearch=0
-highlight lCursor guifg=NONE guibg=Cyan
+set clipboard+=unnamedplus
+
+set hlsearch
+set ignorecase
+set smartcase
 
 nmap <cr> :nohlsearch<cr>
 
 " Automatically removing all trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Toggle paste mode
-nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
-imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
-
 nmap <C-\> :NERDTreeFind<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']
 
 " syntastic
-let g:vimrubocop_config = '~/.rubocop.yml'
+let g:vimrubocop_config = '.rubocop.yml'
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 let g:syntastic_ruby_rubocop_exec = '~/.rbenv/shims/rubocop'
 
 let g:syntastic_enable_signs=1
-let g:syntastic_coffee_checkers = ['coffeelint', 'coffee']
-" let g:syntastic_coffee_coffeelint_args = "--file /usr/local/coffeelint.json"
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
-
-" Airline
-set encoding=utf-8 " Necessary to show Unicode glyphs
-set ttimeoutlen=50
-let g:airline_theme = 'serene'
-let g:airline#extensions#hunks#enabled=0
-let g:airline#extensions#branch#enabled=1
+let g:syntastic_style_error_symbol='✗'
+let g:syntastic_style_warning_symbol='⚠'
 
 " numbers
 nnoremap <F2> :NumbersToggle<CR>
@@ -147,14 +170,14 @@ let g:numbers_exclude = ['tagbar', 'nerdtree', 'vimshell', 'w3m']
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
-
+"
 let g:vim_tags_auto_generate = 1
 
 let g:buffergator_viewport_split_policy = "B"
 
 " easymotion
 map <Leader> <Plug>(easymotion-prefix)
-
+"
 " GitGutter
 nmap [h <Plug>GitGutterPrevHunk
 nmap ]h <Plug>GitGutterNextHunk
@@ -164,3 +187,42 @@ if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 endif
+
+" markdown
+let g:markdown_fenced_languages = ['html', 'ruby', 'bash=sh']
+augroup PrevimSettings
+  autocmd!
+  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
+
+" vim-lexical
+augroup lexical
+  autocmd!
+  autocmd FileType markdown,mkd,apiblueprint call lexical#init()
+  autocmd FileType textile call lexical#init()
+  autocmd FileType text call lexical#init({ 'spell': 0 })
+augroup END
+let g:lexical#spelllang = ['en_us', 'ru_ru']
+
+" Vim-Json
+let g:vim_json_syntax_conceal = 0
+
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"✗":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ },
+      \ 'separator': { 'left': ">", 'right': "<" },
+      \ 'subseparator': { 'left': '|', 'right': '|' }
+      \ }
