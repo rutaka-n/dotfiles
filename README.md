@@ -4,4 +4,8 @@ You need install:
 * silversearch
 * rubocop
 * ruby and co
+* xclip
+* nvim
+* vim-plug
+* curl
 * ...
