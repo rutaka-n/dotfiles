@@ -36,6 +36,7 @@ export GOPATH="$HOME/prog/go"
 PATH="$PATH:$GOPATH/bin"
 
 alias screen='TERM=xterm-256color screen'
+alias tmux='TERM=xterm-256color tmux'
 alias ll='ls -l'
 alias la='ls -la'
 alias b='bundle exec'
