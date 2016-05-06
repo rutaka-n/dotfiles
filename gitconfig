@@ -7,6 +7,7 @@
 [core]
   excludesfile = ~/.gitignore_global
   autocrlf = input
+	editor = nvim
 
 [apply]
   whitespace = nowarn
@@ -20,3 +21,10 @@
 
 [difftool]
   prompt = false
+[user]
+	email = v.promzelev@fun-box.ru
+	name = v.promzelev
+[alias]
+  ls = log --pretty=format':%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short
+  graph = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
+  ltag =! bash -c 'git tag -l | sort -V | tail 1'
