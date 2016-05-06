@@ -23,11 +23,16 @@ Plug 'tpope/vim-sleuth'
 
 Plug 'tpope/vim-unimpaired'
 " buffer managment
-Plug 'jeetsukumaran/vim-buffergator'
 Plug 'vim-scripts/bufkill.vim'
 " search
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rking/ag.vim'
+
+" comand provider into tmux
+Plug 'benmills/vimux'
+
+" run test from vim
+Plug 'janko-m/vim-test'
 
 " auto enable lazyloading for large file
 Plug 'vim-scripts/LargeFile'
@@ -94,9 +99,9 @@ filetype plugin on
 let mapleader=","
 
 " for 256 colors
-set t_Co=258
+" set t_Co=258
 " true color
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 colorscheme jellybeans
 set novisualbell
@@ -231,3 +236,11 @@ let g:lightline = {
       \ 'separator': { 'left': ">", 'right': "<" },
       \ 'subseparator': { 'left': '|', 'right': '|' }
       \ }
+
+" vim-test
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tv :TestVisit<CR>
+let test#strategy = "vimux"
