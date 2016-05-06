@@ -9,4 +9,5 @@ You need install:
 * vim-plug
 * curl
 * tmux
+* rcm
 * ...
