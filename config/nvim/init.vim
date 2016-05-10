@@ -146,8 +146,6 @@ set tags+=.git/tags
 set lcs=trail:·,tab:→·,eol:↪,nbsp:×
 set nojoinspaces                      " Don't add 2 spaces when using J
 
-set clipboard+=unnamedplus
-
 set hlsearch
 set ignorecase
 set smartcase
