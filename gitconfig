@@ -13,7 +13,7 @@
   whitespace = nowarn
 
 [merge]
-  tool = vimdiff
+  tool = nvim -d
 
 [mergetool]
   keepBackup = false
