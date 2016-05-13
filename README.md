@@ -17,6 +17,7 @@ rutaka's configuration files
 * [neovim](https://neovim.io/) with [vim-plug](https://github.com/junegunn/vim-plug)
 * tmux with [tpm](https://github.com/tmux-plugins/tpm)
 * [bash_it](https://github.com/Bash-it/bash-it)
+* ctags or ctags-exuberant
 
 ## True Color
 Instructions for setup True color in terminal see [here](https://gist.github.com/XVilka/8346728)
