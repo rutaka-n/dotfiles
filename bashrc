@@ -26,6 +26,8 @@ PATH="$PATH:$HOME/bin"
 export GOPATH="$HOME"
 export TERM=xterm-256color
 
+EDITOR=nvim
+
 alias ll='ls -l'
 alias la='ls -la'
 alias b='bundle exec'
