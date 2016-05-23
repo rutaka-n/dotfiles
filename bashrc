@@ -34,3 +34,6 @@ alias b='bundle exec'
 alias bi='bundle install'
 
 export POLTERGEIST=1
+
+# todo.sh
+alias t='todo.sh'
