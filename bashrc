@@ -26,7 +26,7 @@ PATH="$PATH:$HOME/bin"
 export GOPATH="$HOME"
 export TERM=xterm-256color
 
-EDITOR=nvim
+export EDITOR=nvim
 
 alias ll='ls -l'
 alias la='ls -la'
@@ -37,3 +37,6 @@ export POLTERGEIST=1
 
 # todo.sh
 alias t='todo.sh'
+
+# added by travis gem
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
