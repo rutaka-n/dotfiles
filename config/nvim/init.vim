@@ -48,6 +48,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 
+" refactoring
+Plug 'vim-scripts/DirDo.vim'
+
 " Tabulate
 Plug 'godlygeek/tabular'
 " Compltion on tab
@@ -67,6 +70,7 @@ Plug 'reedes/vim-lexical'
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'ngmy/vim-rubocop', { 'for': 'ruby' }
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
 " coffee
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'vitaly/vim-syntastic-coffee', { 'for': 'coffee' }
