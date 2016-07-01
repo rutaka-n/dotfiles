@@ -6,7 +6,8 @@ call plug#begin('~/.vim/plugged')
 
 "Plug 'Shougo/vimproc.vim'
 " themes
-Plug 'nanotech/jellybeans.vim'
+"Plug 'nanotech/jellybeans.vim'
+Plug 'tyrannicaltoucan/vim-deep-space'
 " statusline
 Plug 'itchyny/lightline.vim'
 " some defaults
@@ -103,7 +104,7 @@ let mapleader=","
 " true color
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
-colorscheme jellybeans
+colorscheme deep-space
 set novisualbell
 
 set backspace=indent,eol,start
