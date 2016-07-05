@@ -37,6 +37,9 @@ export POLTERGEIST=1
 
 # todo.sh
 alias t='todo.sh'
+export TODOTXT_DIR="$HOME/bin"
+source $TODOTXT_DIR/todo_completion
+complete -F _todo t
 
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
