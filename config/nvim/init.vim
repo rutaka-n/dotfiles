@@ -6,7 +6,7 @@ call plug#begin('~/.vim/plugged')
 
 "Plug 'Shougo/vimproc.vim'
 " themes
-"Plug 'nanotech/jellybeans.vim'
+Plug 'nanotech/jellybeans.vim'
 Plug 'tyrannicaltoucan/vim-deep-space'
 " statusline
 Plug 'itchyny/lightline.vim'
@@ -70,10 +70,11 @@ Plug 'reedes/vim-lexical'
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'ngmy/vim-rubocop', { 'for': 'ruby' }
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
 " coffee
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'vitaly/vim-syntastic-coffee', { 'for': 'coffee' }
+" python
+Plug 'klen/python-mode', { 'for': 'python' }
 " golang
 Plug 'fatih/vim-go', { 'for': 'go' }
 " json
@@ -103,12 +104,14 @@ filetype plugin on
 
 let mapleader=","
 
+" TODO: use if for detect supporting true color
 " for 256 colors
 " set t_Co=258
 " true color
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 colorscheme deep-space
+" colorscheme jellybeans
 set novisualbell
 
 set backspace=indent,eol,start
