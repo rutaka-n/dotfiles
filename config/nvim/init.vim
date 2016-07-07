@@ -104,9 +104,6 @@ filetype plugin on
 
 let mapleader=","
 
-" TODO: use if for detect supporting true color
-" for 256 colors
-" set t_Co=258
 " true color
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
