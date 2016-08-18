@@ -19,11 +19,12 @@ export SCM_CHECK=true
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
-export PATH="$HOME/.rbenv/bin:$PATH"
+PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 PATH="$PATH:$HOME/bin"
 
-export GOPATH="$HOME"
+export PATH
+
 export TERM=xterm-256color
 
 export EDITOR=nvim
@@ -43,3 +44,5 @@ complete -F _todo t
 
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+
+source $HOME/.bashrc.local
