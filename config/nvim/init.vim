@@ -19,12 +19,9 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-commentary'
 " repeat works everywhere
 Plug 'tpope/vim-repeat'
-" autodetect right indent
-Plug 'tpope/vim-sleuth'
 
 Plug 'tpope/vim-unimpaired'
-" buffer managment
-Plug 'vim-scripts/bufkill.vim'
+
 " search
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rking/ag.vim'
@@ -58,10 +55,10 @@ Plug 'ervandew/supertab'
 "Plug 'szw/vim-tags'
 " autosave
 Plug '907th/vim-auto-save'
-" relative numbers
-Plug 'myusuf3/numbers.vim'
 " easymoution magick
 Plug 'easymotion/vim-easymotion'
+
+Plug 'editorconfig/editorconfig-vim'
 
 " lexical checking
 Plug 'reedes/vim-lexical'
@@ -79,14 +76,10 @@ Plug 'klen/python-mode', { 'for': 'python' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 " json
 Plug 'elzr/vim-json', { 'for': 'json' }
-" toml
-Plug 'cespare/vim-toml', { 'for': 'toml' }
 " markdown
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'kannokanno/previm', { 'for': 'markdown' }
 Plug 'tyru/open-browser.vim', { 'for': 'markdown' }
-" apiblueprint
-Plug 'kylef/apiblueprint.vim', { 'for': 'apiblueprint' }
 " Erlang
 Plug 'edkolev/erlang-motions.vim', { 'for': 'erlang' }
 Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
@@ -120,11 +113,6 @@ endif
 
 set shell=/bin/bash
 set cursorline                        " Highlight current line
-set expandtab                         " Insert spaces instead of actually tabs
-set tabstop=2                         " Number of spaces each tab counts for
-set softtabstop=2                     " Number of spaces for some tab operations
-set shiftwidth=2                      " The space << and >> moves the lines
-set shiftround
 set smartindent                       " Smart auto-indent when creating a new line
 set colorcolumn=80
 set synmaxcol=300                     " The max number of columns to try and highlight
@@ -157,9 +145,6 @@ set smartcase
 
 nmap <cr> :nohlsearch<cr>
 
-" Automatically removing all trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
-
 nmap <C-\> :NERDTreeFind<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']
@@ -175,19 +160,11 @@ let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_error_symbol='✗'
 let g:syntastic_style_warning_symbol='⚠'
 
-" numbers
-nnoremap <F2> :NumbersToggle<CR>
-let g:numbers_exclude = ['tagbar', 'nerdtree', 'vimshell', 'w3m']
-
 " autosave
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
 "
-let g:vim_tags_auto_generate = 1
-
-let g:buffergator_viewport_split_policy = "B"
-
 " easymotion
 map <Leader> <Plug>(easymotion-prefix)
 "
@@ -216,9 +193,6 @@ augroup lexical
   autocmd FileType text call lexical#init({ 'spell': 0 })
 augroup END
 let g:lexical#spelllang = ['en_us', 'ru_ru']
-
-" Vim-Json
-let g:vim_json_syntax_conceal = 0
 
 let g:lightline = {
       \ 'colorscheme': 'jellybeans',
