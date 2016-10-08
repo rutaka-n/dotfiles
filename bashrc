@@ -19,15 +19,15 @@ export SCM_CHECK=true
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
-PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+[ -f $HOME/.rbenv/ ] && PATH="$HOME/.rbenv/bin:$PATH" && eval "$(rbenv init -)"
+
 PATH="$PATH:$HOME/bin"
 
 export PATH
 
 export TERM=xterm-256color
 
-export EDITOR=nvim
+export EDITOR=vim
 
 alias ll='ls -l'
 alias la='ls -la'
@@ -39,10 +39,9 @@ export POLTERGEIST=1
 # todo.sh
 alias t='todo.sh'
 export TODOTXT_DIR="$HOME/bin"
-source $TODOTXT_DIR/todo_completion
-complete -F _todo t
+[ -f $TODOTXT_DIR/todo_completion ] && source $TODOTXT_DIR/todo_completion && complete -F _todo t
 
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
-source $HOME/.bashrc.local
+[ -f $HOME/.bashrc.local ] && source $HOME/.bashrc.local
