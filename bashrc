@@ -19,7 +19,7 @@ export SCM_CHECK=true
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
-[ -f $HOME/.rbenv/ ] && PATH="$HOME/.rbenv/bin:$PATH" && eval "$(rbenv init -)"
+[ -f $HOME/.rbenv/bin/rbenv ] && PATH="$HOME/.rbenv/bin:$PATH" && eval "$(rbenv init -)"
 
 PATH="$PATH:$HOME/bin"
 
