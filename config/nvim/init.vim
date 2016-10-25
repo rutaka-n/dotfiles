@@ -89,6 +89,9 @@ Plug 'akalyaev/vim-erlang-spec', { 'for': 'erlang' }
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'Shougo/vimproc', { 'for': 'haskell' }
 Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+
+" rust
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 call plug#end()
 
 syntax on
@@ -148,6 +151,10 @@ nmap <cr> :nohlsearch<cr>
 nmap <C-\> :NERDTreeFind<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']
+
+" python
+let g:python_host_prog = '/usr/bin/python2.7'
+let g:python3_host_prog = '/usr/bin/python3.4'
 
 " syntastic
 let g:vimrubocop_config = '.rubocop.yml'

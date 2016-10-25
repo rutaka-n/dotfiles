@@ -9,8 +9,14 @@ end_of_line = lf
 charset = utf-8
 
 [**.rb]
-indent_style = space
 indent_size = 2
+
+[**.rs]
+indent_size = 8
+
+[**.c]
+indent_size = 8
+indent_style = tab
 
 # Use 2 spaces for the HTML files
 [*.html]
