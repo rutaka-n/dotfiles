@@ -7,6 +7,8 @@ rutaka's configuration files
 2. `rcup -d dotfiles`
 3. Install Vim plugins: open Vim and type `:PlugInstall`.
 4. Install Tmux plugins: run tmux and hit `Ctrl-f + I`.
+5. Install msmtp, w3m and mutt
+6. Change msmtprc and muttrc
 
 ### Requirements:
 * curl
