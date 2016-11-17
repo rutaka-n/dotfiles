@@ -7,13 +7,13 @@
 [core]
   excludesfile = ~/.gitignore_global
   autocrlf = input
-	editor = nvim
+	editor = vim
 
 [apply]
   whitespace = nowarn
 
 [merge]
-  tool = nvim -d
+  tool = vim-diff
 
 [mergetool]
   keepBackup = false
@@ -22,8 +22,8 @@
 [difftool]
   prompt = false
 [user]
-	email = v.promzelev@fun-box.ru
-	name = v.promzelev
+	email = rutaka.nashimo@yandex.mail.com
+	name = rutaka
 [alias]
   ls = log --pretty=format':%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short
   graph = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
