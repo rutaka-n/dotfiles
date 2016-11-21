@@ -182,7 +182,8 @@ exec xbacklight -set 60
 exec setxkbmap -option ctrl:nocaps
 # It broke shift + Mod4 bindings
 # Fix if use system layout in settings of ibus
-# exec setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle"
+exec setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle"
+exec --no-startup-id nitrogen --restore
 
 exec dropbox start
 # exec wicd-client -t
