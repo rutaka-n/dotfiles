@@ -19,6 +19,9 @@ export SCM_CHECK=true
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
+# shopt -p to details
+shopt -s autocd cdspell checkjobs cmdhist dirspell globstar
+
 [ -f $HOME/.rbenv/bin/rbenv ] && PATH="$HOME/.rbenv/bin:$PATH" && eval "$(rbenv init -)"
 
 PATH="$PATH:$HOME/bin"
