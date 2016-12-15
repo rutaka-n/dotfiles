@@ -195,7 +195,7 @@ augroup END
 " vim-lexical
 augroup lexical
   autocmd!
-  autocmd FileType markdown,mkd,apiblueprint call lexical#init()
+  autocmd FileType markdown,mkd,apiblueprint,apib call lexical#init()
   autocmd FileType textile call lexical#init()
   autocmd FileType text call lexical#init({ 'spell': 0 })
 augroup END
