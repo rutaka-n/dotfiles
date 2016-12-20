@@ -182,7 +182,7 @@ bindsym $mod+t border toggle
 exec xbacklight -set 55
 # It broke shift + Mod4 bindings
 # Fix if use system layout in settings of ibus
-setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle" "grp:caps_toggle" &
+exec setxkbmap -option "ctrl:nocaps" "us,ru" ",winkeys" "grp:alt_shift_toggle"
 
 exec --no-startup-id nitrogen --restore
 exec dropbox start
