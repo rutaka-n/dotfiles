@@ -14,6 +14,12 @@ indent_size = 2
 [**.rake]
 indent_size = 2
 
+[**.erb]
+indent_size = 2
+
+[**.jbuilder]
+indent_size = 2
+
 [**.rs]
 indent_size = 8
 
