@@ -61,6 +61,7 @@ Plug 'reedes/vim-lexical'
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'ngmy/vim-rubocop', { 'for': 'ruby' }
+Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
 " python
 Plug 'klen/python-mode', { 'for': 'python' }
 " json
@@ -69,6 +70,8 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'kannokanno/previm', { 'for': 'markdown' }
 Plug 'tyru/open-browser.vim', { 'for': 'markdown' }
+" apiblueprint
+Plug 'kylef/apiblueprint.vim'
 " Erlang
 Plug 'edkolev/erlang-motions.vim', { 'for': 'erlang' }
 Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
@@ -76,6 +79,10 @@ Plug 'akalyaev/vim-erlang-spec', { 'for': 'erlang' }
 
 " rust
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+
+" golang
+Plug 'fatih/vim-go', { 'for': 'go' }
+
 call plug#end()
 syntax enable
 filetype on
@@ -101,7 +108,7 @@ set cursorline                        " Highlight current line
 set smartindent                       " Smart auto-indent when creating a new line
 set colorcolumn=80
 set ttyfast                           " Optimize for fast terminal connections
-set lazyredraw
+" set lazyredraw
 set encoding=utf-8                    " Set the default encodings just in case $LANG isn't set
 set nowrap                            " Don't wrap lines
 set number                            " Enable line numbers
