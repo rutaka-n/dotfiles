@@ -48,3 +48,5 @@ export TODOTXT_DIR="$HOME/bin"
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
 [ -f $HOME/.bashrc.local ] && source $HOME/.bashrc.local
+
+export TZ='Europe/Samara'
