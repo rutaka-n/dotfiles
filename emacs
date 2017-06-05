@@ -1,3 +1,11 @@
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
+(when (< emacs-major-version 24)
+    ;; For important compatibility libraries like cl-lib
+    (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
+(package-initialize)
+
 ;; Name and email
 (setq user-full-name "rutaka")
 (setq user-mail-address "rutaka.nashimo@yandex.ru")
@@ -17,7 +25,7 @@
 ;; Disable GUI components
 (tooltip-mode      -1)
 ;;(menu-bar-mode     -1) ;; отключаем графическое меню
-(tool-bar-mode     -1) ;; отключаем tool-bar
+;;(tool-bar-mode     -1) ;; отключаем tool-bar
 (scroll-bar-mode   -1) ;; отключаем полосу прокрутки
 (blink-cursor-mode -1) ;; курсор не мигает
 (setq use-dialog-box     nil) ;; никаких графических диалогов и окон - все через минибуфер
@@ -50,7 +58,7 @@
 ;; Fringe settings
 (fringe-mode '(8 . 0)) ;; органичиталь текста только слева
 (setq-default indicate-empty-lines t) ;; отсутствие строки выделить глифами рядом с полосой с номером строки
-(setq-default indicate-buffer-boundaries 'left) ;; индикация только слева
+;;(setq-default indicate-buffer-boundaries 'left) ;; индикация только слева
 
 ;; Display file size/time in mode-line
 (setq display-time-24hr-format t) ;; 24-часовой временной формат в mode-line
@@ -58,8 +66,8 @@
 (size-indication-mode          t) ;; размер файла в %-ах
 
 ;; Line wrapping
-(setq word-wrap          t) ;; переносить по словам
-(global-visual-line-mode t)
+;;(setq word-wrap          t) ;; переносить по словам
+;;(global-visual-line-mode t)
 
 ;; Start window size
 (when (window-system)
@@ -77,7 +85,6 @@
 (require 'bs)
 (require 'ibuffer)
 (defalias 'list-buffers 'ibuffer) ;; отдельный список буферов при нажатии C-x C-b
-(global-set-key (kbd "<f2>") 'bs-show) ;; запуск buffer selection кнопкой F2
 
 ;; Syntax highlighting
 (require 'font-lock)
@@ -99,7 +106,12 @@
 (setq search-highlight        t)
 (setq query-replace-highlight t)
 
+(load-theme 'tango-dark)
+
+;; Orgmode
+(setq org-src-fontify-natively t)
+;; TODO keywords
+(setq org-todo-keywords
+       '((sequence "TODO" "FEEDBACK" "VERIFY" "|" "DONE" "DELEGATED")))
 
 ;; TODO: auto-complete, sr-speedbar, color-theme, projectile
-
-
