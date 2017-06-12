@@ -76,7 +76,12 @@ Plug 'kylef/apiblueprint.vim'
 Plug 'edkolev/erlang-motions.vim', { 'for': 'erlang' }
 Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
 Plug 'akalyaev/vim-erlang-spec', { 'for': 'erlang' }
-
+" Java
+Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
+Plug 'maven-ide', { 'for': 'java' }
+Plug 'java.vim', { 'for': 'java' }
+" elixir
+Plug 'elixir-lang/vim-elixir'
 " rust
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
