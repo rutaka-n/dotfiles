@@ -20,6 +20,12 @@ indent_size = 2
 [**.jbuilder]
 indent_size = 2
 
+[**.ex]
+indent_size = 2
+
+[**.exs]
+indent_size = 2
+
 [**.rs]
 indent_size = 8
 
