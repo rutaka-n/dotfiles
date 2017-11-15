@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'Shougo/vimproc.vim'
 " themes
 Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'nanotech/jellybeans.vim'
 " statusline
 Plug 'itchyny/lightline.vim'
 " some defaults
@@ -96,7 +97,7 @@ filetype plugin on
 let mapleader=","
 
 set background=dark
-colorscheme deep-space
+colorscheme jellybeans
 
 set novisualbell
 
@@ -238,3 +239,40 @@ nmap <silent> <leader>ts :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tv :TestVisit<CR>
 let test#strategy = "vimux"
+
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
+function! PrintCStyleCopyright()
+    let year = system('date +"%Y"')[0:3]
+    call setline(1, '// Copyright © ' . year . ' Vladislav Promzelev (rutaka.nashimo@yandex.ru)')
+    call setline(2, '// License: https://opensource.org/licenses/MIT')
+endfunction
+
+function! PrintPythonCopyright()
+    let year = system('date +"%Y"')[0:3]
+    call setline(1, '#!/usr/bin/python')
+    call setline(2, '')
+    call setline(3, '# Copyright © ' . year . ' Vladislav Promzelev (rutaka.nashimo@yandex.ru)')
+    call setline(4, '# License: https://opensource.org/licenses/MIT')
+endfunction
+
+function! PrintRubyCopyright()
+    let year = system('date +"%Y"')[0:3]
+    call setline(1, '# Copyright © ' . year . ' Vladislav Promzelev (rutaka.nashimo@yandex.ru)')
+    call setline(2, '# License: https://opensource.org/licenses/MIT')
+endfunction
+
+function! PrintBashCopyright()
+    let year = system('date +"%Y"')[0:3]
+    call setline(1, '#!/bin/bash')
+    call setline(2, '')
+    call setline(3, '# Copyright © ' . year . ' Vladislav Promzelev (rutaka.nashimo@yandex.ru)')
+    call setline(4, '# License: https://opensource.org/licenses/MIT')
+endfunction
+
+" TODO: move it to plugin!
+
+au BufNewFile *.{cpp,h,hpp,go} :call PrintCStyleCopyright()
+au BufNewFile *.py :call PrintPythonCopyright()
+au BufNewFile *.sh :call PrintBashCopyright()
+au BufNewFile *.rb :call PrintRubyCopyright()
