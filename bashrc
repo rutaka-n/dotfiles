@@ -40,3 +40,7 @@ export POLTERGEIST=1
 [ -f $HOME/.bashrc.local ] && source $HOME/.bashrc.local
 
 export TZ='Europe/Samara'
+
+[ -f $HOME/.asdf/asdf.sh ] && source $HOME/.asdf/asdf.sh
+
+[ -f $HOME/.asdf/completions/asdf.bash ] && source $HOME/.asdf/completions/asdf.bash
