@@ -74,9 +74,10 @@ Plug 'tyru/open-browser.vim', { 'for': 'markdown' }
 " apiblueprint
 Plug 'kylef/apiblueprint.vim'
 " Erlang
-Plug 'edkolev/erlang-motions.vim', { 'for': 'erlang' }
 Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
-Plug 'akalyaev/vim-erlang-spec', { 'for': 'erlang' }
+Plug 'vim-erlang/vim-erlang-compiler', { 'for': 'erlang' }
+Plug 'vim-erlang/vim-erlang-omnicomplete', { 'for': 'erlang' }
+Plug 'vim-erlang/vim-erlang-tags', { 'for': 'erlang' }
 " Java
 Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
 Plug 'maven-ide', { 'for': 'java' }
