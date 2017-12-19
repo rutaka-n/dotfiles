@@ -30,10 +30,7 @@ export TERM=screen-256color
 
 export EDITOR=vim
 
-alias ll='ls -l'
-alias la='ls -la'
 alias b='bundle exec'
-alias bi='bundle install'
 
 export POLTERGEIST=1
 
