@@ -21,6 +21,9 @@ Plug 'tpope/vim-unimpaired'
 
 Plug 'terryma/vim-multiple-cursors'
 
+" Lint
+Plug 'w0rp/ale'
+
 " search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
