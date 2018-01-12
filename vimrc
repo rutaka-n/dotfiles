@@ -94,7 +94,7 @@ set cursorline                        " Highlight current line
 set smartindent                       " Smart auto-indent when creating a new line
 set colorcolumn=80
 set ttyfast                           " Optimize for fast terminal connections
-" set lazyredraw
+set lazyredraw
 set encoding=utf-8                    " Set the default encodings just in case $LANG isn't set
 set nowrap                            " Don't wrap lines
 set number                            " Enable line numbers
