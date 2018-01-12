@@ -35,9 +35,6 @@ Plug 'benmills/vimux'
 " run test from vim
 Plug 'janko-m/vim-test'
 
-" auto enable lazyloading for large file
-Plug 'vim-scripts/LargeFile'
-" syntax checking
 " file manager
 Plug 'scrooloose/nerdtree'
 " git
