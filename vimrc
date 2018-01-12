@@ -104,7 +104,9 @@ set nofoldenable
 set scrolloff=5                       " Lines the cursor is to the edge before scrolling
 set complete-=i                       " set complete=.,w,b,u,t
 set completeopt=menu,preview
-set lcs=trail:·,tab:→·,eol:↪,nbsp:×
+" Show whitespace
+set list
+set listchars=trail:·,tab:▸\ ,eol:¬
 set nojoinspaces                      " Don't add 2 spaces when using J
 
 " map unnamed buffer to system X buffer
