@@ -188,9 +188,6 @@ let g:lightline = {
 " vim-test
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>ts :TestSuite<CR>
-nmap <silent> <leader>tl :TestLast<CR>
-nmap <silent> <leader>tv :TestVisit<CR>
 let test#strategy = "vimux"
 
 function! PrintCStyleCopyright()
