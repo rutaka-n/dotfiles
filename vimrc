@@ -22,6 +22,9 @@ Plug 'tpope/vim-unimpaired'
 Plug 'terryma/vim-multiple-cursors'
 
 " search
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+Plug 'dyng/ctrlsf.vim'
 
 " comand provider into tmux
 Plug 'benmills/vimux'
@@ -150,7 +153,17 @@ let g:auto_save_silent = 1
 nmap [h <Plug>GitGutterPrevHunk
 nmap ]h <Plug>GitGutterNextHunk
 
+nmap <leader>a <Plug>CtrlSFPrompt
+" nnoremap <leader>a :Ag<CR>
 
+" map FZF
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>b :Buffers<CR>
+
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
 let g:lightline = {
       \ 'colorscheme': 'jellybeans',
