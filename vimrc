@@ -19,6 +19,8 @@ Plug 'tpope/vim-repeat'
 
 Plug 'tpope/vim-unimpaired'
 
+Plug 'terryma/vim-multiple-cursors'
+
 " search
 
 " comand provider into tmux
