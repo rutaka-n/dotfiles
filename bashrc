@@ -30,6 +30,8 @@ export TERM=screen-256color
 
 export EDITOR=vim
 
+export GPG_TTY=$(tty)
+
 alias b='bundle exec'
 
 export POLTERGEIST=1
