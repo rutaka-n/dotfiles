@@ -3,16 +3,20 @@ call plug#begin('~/.vim/plugged')
 
 "Plug 'Shougo/vimproc.vim'
 " themes
-Plug 'tyrannicaltoucan/vim-deep-space'
+" Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'nanotech/jellybeans.vim'
+" Lint
+Plug 'w0rp/ale'
+
 " statusline
 Plug 'itchyny/lightline.vim'
+
 " some defaults
 Plug 'tpope/vim-sensible'
 " manipulate surround characters
 Plug 'tpope/vim-surround'
-Plug 'Raimondi/delimitMate'
 " commetary
+Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-commentary'
 " repeat works everywhere
 Plug 'tpope/vim-repeat'
@@ -21,19 +25,10 @@ Plug 'tpope/vim-unimpaired'
 
 Plug 'terryma/vim-multiple-cursors'
 
-" Lint
-Plug 'w0rp/ale'
-
 " search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'dyng/ctrlsf.vim'
-
-" comand provider into tmux
-Plug 'benmills/vimux'
-
-" run test from vim
-Plug 'janko-m/vim-test'
 
 " file manager
 Plug 'scrooloose/nerdtree'
@@ -51,16 +46,13 @@ Plug '907th/vim-auto-save'
 
 Plug 'editorconfig/editorconfig-vim'
 
-" ruby
-Plug 'tpope/vim-endwise', { 'for': 'ruby' }
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 " markdown
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 " Erlang
-Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
-Plug 'vim-erlang/vim-erlang-compiler', { 'for': 'erlang' }
-Plug 'vim-erlang/vim-erlang-omnicomplete', { 'for': 'erlang' }
-Plug 'vim-erlang/vim-erlang-tags', { 'for': 'erlang' }
+Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' } " syntax
+Plug 'vim-erlang/vim-erlang-skeletons', { 'for': 'erlang' } " tamplates for otp behaviors
+Plug 'nevar/revim', { 'for': 'erlang' } " go to definition
+Plug 'melekes/vim-erlang-spec', { 'for': 'erlang' } " generate specs
 " elixir
 Plug 'elixir-lang/vim-elixir'
 " rust
@@ -185,10 +177,31 @@ let g:lightline = {
       \ 'subseparator': { 'left': '|', 'right': '|' }
       \ }
 
-" vim-test
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-let test#strategy = "vimux"
+nnoremap <leader>s :ErlangSpec<CR>
+
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+let g:ale_linters_explicit = 1
+let g:ale_erlang_syntaxerl_executable = "/Users/rutaka/projects/opensource/syntaxerl/syntaxerl"
+
+let g:ale_linters = {'erlang': ['syntaxerl', 'dialyzer']}
+" let g:ale_erlang_erlc_options = "-pa \"_build/default/lib/*/ebin\" -I \"_build/default/lib/\" -I \"./include\""
+
+let g:erl_author="Vladislav Promzelev"
+let g:erl_company="Company"
+let g:erl_replace_buffer=1
+
+autocmd FileType erlang nnoremap <silent> <buffer>
+    \ <F6> :call revim#goto#Define(g:global_call)<CR>
+let g:global_call = 2
+hi erlangFunHead cterm=bold
+hi erlangEdocTag cterm=bold
+hi erlangBIF cterm=bold ctermfg=green
 
 function! PrintCStyleCopyright()
     let year = system('date +"%Y"')[0:3]
