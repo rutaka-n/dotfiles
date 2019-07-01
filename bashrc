@@ -32,10 +32,6 @@ export EDITOR=vim
 
 export GPG_TTY=$(tty)
 
-alias b='bundle exec'
-
-export POLTERGEIST=1
-
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
