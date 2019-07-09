@@ -61,6 +61,9 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 " golang
 Plug 'fatih/vim-go', { 'for': 'go' }
 
+" python
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+
 call plug#end()
 syntax enable
 filetype on
@@ -101,7 +104,7 @@ set complete-=i                       " set complete=.,w,b,u,t
 set completeopt=menu,preview
 " Show whitespace
 set list
-set listchars=trail:·,tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,trail:·
 set nojoinspaces                      " Don't add 2 spaces when using J
 
 " map unnamed buffer to system X buffer
@@ -187,13 +190,14 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 let g:ale_linters_explicit = 1
-let g:ale_erlang_syntaxerl_executable = "/Users/rutaka/projects/opensource/syntaxerl/syntaxerl"
+" let g:ale_erlang_syntaxerl_executable = "/home/vpromzelev/bin/syntaxerl"
 
-let g:ale_linters = {'erlang': ['syntaxerl', 'dialyzer']}
-" let g:ale_erlang_erlc_options = "-pa \"_build/default/lib/*/ebin\" -I \"_build/default/lib/\" -I \"./include\""
+" let g:ale_linters = {'erlang': ['syntaxerl', 'dialyzer']}
+let g:ale_linters = {'erlang': ['erlc', 'dialyzer']}
+let g:ale_erlang_erlc_options = "-pa \"_build/default/lib/*/ebin\" -I \"_build/default/lib/\" -I \"./include\" -I \"apps/hbc_test/include\" -I \"apps/hbc_main/include\""
 
 let g:erl_author="Vladislav Promzelev"
-let g:erl_company="Company"
+" let g:erl_company="Company"
 let g:erl_replace_buffer=1
 
 autocmd FileType erlang nnoremap <silent> <buffer>
@@ -237,3 +241,7 @@ au BufNewFile *.{cpp,h,hpp,go} :call PrintCStyleCopyright()
 au BufNewFile *.py :call PrintPythonCopyright()
 au BufNewFile *.sh :call PrintBashCopyright()
 au BufNewFile *.rb :call PrintRubyCopyright()
+
+let g:pymode_indent = 0
+let g:pymode_lint_on_write = 0
+let g:pymode_lint_on_fly = 0
