@@ -8,11 +8,10 @@ Plug 'nanotech/jellybeans.vim'
 " Lint
 Plug 'w0rp/ale'
 
-" statusline
-Plug 'itchyny/lightline.vim'
+Plug 'kamykn/spelunker.vim'
 
-" some defaults
-Plug 'tpope/vim-sensible'
+" statusline
+Plug 'itchyny/lightline.vim' " some defaults Plug 'tpope/vim-sensible'
 " manipulate surround characters
 Plug 'tpope/vim-surround'
 " commetary
@@ -29,6 +28,8 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'dyng/ctrlsf.vim'
+
+Plug 'majutsushi/tagbar'
 
 " file manager
 Plug 'scrooloose/nerdtree'
@@ -87,7 +88,7 @@ set shell=/bin/sh
 
 set cursorline                        " Highlight current line
 set smartindent                       " Smart auto-indent when creating a new line
-set colorcolumn=80
+set colorcolumn=120
 set ttyfast                           " Optimize for fast terminal connections
 set lazyredraw
 set encoding=utf-8                    " Set the default encodings just in case $LANG isn't set
@@ -106,6 +107,7 @@ set completeopt=menu,preview
 set list
 set listchars=tab:▸\ ,trail:·
 set nojoinspaces                      " Don't add 2 spaces when using J
+set laststatus=2
 
 " map unnamed buffer to system X buffer
 set clipboard+=unnamed
@@ -154,6 +156,9 @@ nmap <leader>a <Plug>CtrlSFPrompt
 " map FZF
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>c :BCommits<CR>
+nnoremap <leader>C :Commits<CR>
+nnoremap <leader>h :History:<CR>
 
 " Insert mode completion
 imap <c-x><c-k> <plug>(fzf-complete-word)
@@ -199,6 +204,10 @@ let g:ale_erlang_erlc_options = "-pa \"_build/default/lib/*/ebin\" -I \"_build/d
 let g:erl_author="Vladislav Promzelev"
 " let g:erl_company="Company"
 let g:erl_replace_buffer=1
+
+" spelunker
+let g:enable_spelunker_vim = 1
+let g:spelunker_target_min_char_len = 3
 
 autocmd FileType erlang nnoremap <silent> <buffer>
     \ <F6> :call revim#goto#Define(g:global_call)<CR>
