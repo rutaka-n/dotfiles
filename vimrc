@@ -1,3 +1,5 @@
+set secure
+
 set nocompatible
 call plug#begin('~/.vim/plugged')
 
