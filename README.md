@@ -1,15 +1,6 @@
 rutaka's configuration files
 ===============
 
-## Install
-
-1. `git clone https://github.com/rutaka-n/dotfiles.git`
-2. `rcup -d dotfiles`
-3. Install Vim plugins: open Vim and type `:PlugInstall`.
-4. Install Tmux plugins: run tmux and hit `Ctrl-f + I`.
-5. Install msmtp, w3m and mutt
-6. Change msmtprc and muttrc
-
 ### Requirements:
 * curl
 * [rcm]( https://github.com/thoughtbot/rcm )
@@ -20,6 +11,7 @@ rutaka's configuration files
 * tmux with [tpm](https://github.com/tmux-plugins/tpm)
 * [bash_it](https://github.com/Bash-it/bash-it)
 * ctags or ctags-exuberant
+* tree-sitter
 
 ## True Color
 Instructions for setup True color in terminal see [here](https://gist.github.com/XVilka/8346728)

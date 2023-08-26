@@ -1,2 +1,0 @@
-EXCLUDES="README.md LICENSE color-spaces.pl"
-DOTFILES_DIRS="$HOME/dotfiles"
