@@ -53,6 +53,9 @@ syntax enable
 filetype on
 filetype plugin on
 
+" set local include path
+let &path.="src/include,/usr/include/AL,"
+
 let mapleader=","
 
 set background=dark
