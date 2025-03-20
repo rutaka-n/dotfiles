@@ -17,5 +17,9 @@ rutaka's configuration files
 Instructions for setup True color in terminal see [here](https://gist.github.com/XVilka/8346728)
 
 For check results run: `dotfiles/color-spaces.pl`
+
+## Pager for psql
+psql-pager is vim-based script or pspg
+
 ## License
 [MIT](https://github.com/rutaka-n/dotfiles/blob/master/LICENSE)
