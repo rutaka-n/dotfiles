@@ -1,12 +1,38 @@
 root = true
 
 [*]
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
 indent_style = space
 indent_size = 4
-insert_final_newline = true
-trim_trailing_whitespace = true
 end_of_line = lf
-charset = utf-8
+
+[{Makefile,*.go,.gitmodules}]
+indent_style = tab
+indent_size = 4
+
+[go.{mod,work,work.sum,sum}]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+indent_style = unset
+indent_size = unset
+
+[*.md]
+indent_size = 4
+trim_trailing_whitespace = false
+
+eclint_indent_style = unset
+
+[Dockerfile]
+indent_size = 4
+
+# The JSON files contain newlines inconsistently
+[*.json]
+indent_size = 2
+insert_final_newline = ignore
 
 [**.rb]
 indent_size = 2
@@ -26,12 +52,8 @@ indent_size = 2
 [**.exs]
 indent_size = 2
 
-[**.rs]
-indent_size = 8
-
 [**.c]
-indent_size = 8
-indent_style = tab
+indent_size = 4
 
 # Use 2 spaces for the HTML files
 [*.html]
@@ -42,12 +64,3 @@ indent_size = 2
 
 [*.yaml]
 indent_size = 2
-
-# The JSON files contain newlines inconsistently
-[*.json]
-indent_size = 2
-insert_final_newline = ignore
-
-# Makefiles always use tabs for indentation
-[Makefile]
-indent_style = tab
